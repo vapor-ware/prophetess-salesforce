@@ -3,14 +3,13 @@
 import asyncio
 import datetime
 import logging
-import os
 
 import aiohttp
 import jwt
 
 from prophetess_salesforce.exceptions import SalesforceAPIException
 
-log = logging.getLogger(__name__)
+log = logging.getLogger('prophetess.plugins.salesforce.client')
 
 
 class SFClient:
@@ -38,7 +37,7 @@ class SFClient:
             'Authorization': 'Bearer {}'.format(self.token)
         }
 
-    def build_url(self, apiver='v41.0'):
+    def build_url(self, apiver):
         """Helper function to construct url from provided configuration.
 
         Returns:
@@ -66,7 +65,7 @@ class SFClient:
             'aud': self.audience,
         }
 
-        token = jwt.encode(
+        assertion = jwt.encode(
             claims,
             self.key,
             algorithm='RS256',
@@ -78,7 +77,7 @@ class SFClient:
 
         data = {
             'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-            'assertion': token
+            'assertion': assertion,
         }
 
         headers = {
