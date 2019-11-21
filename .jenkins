@@ -5,9 +5,10 @@ library identifier: 'vapor@master', retriever: modernSCM(
     credentialsId: 'vio-bot-gh'])
 
 // declared in vapor-ware/ci-shared/vars/toxPipeline.groovy
-toxPipeline {
-  releaseToPypi: True
-  podTemplate = """
+toxPipeline([
+  "releaseToPypi": true,
+  "twineCredential": "pypi-token-prophetess-salesforce-upload",
+  "podTemplate": """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -28,4 +29,4 @@ spec:
     value: jenkins
     effect: NoSchedule
 """
-}
+])
