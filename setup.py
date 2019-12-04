@@ -40,6 +40,7 @@ setup(
     install_requires=[
         'aiohttp',
         'PyJWT',
+        'cryptography',
     ],
     classifiers=[
         'Environment :: Plugins',
