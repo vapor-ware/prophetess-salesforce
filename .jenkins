@@ -6,6 +6,7 @@ library identifier: 'vapor@1.15.7', retriever: modernSCM(
 
 pythonPipeline([
     "pythonVersion": "3.8",
+    "skipSetup": true,
     "twineCredential": "pypi-token-prophetess-salesforce-upload",
     "skipDocker": true,
     "skipIntegrationTest": true,
