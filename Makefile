@@ -8,3 +8,6 @@ lint:
 
 ci-pypi-release:
 	tox -e release
+
+pypi-release:
+	tox -e release
