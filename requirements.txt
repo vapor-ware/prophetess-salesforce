@@ -1,4 +1,4 @@
 PyJWT==2.1.0
 aiohttp[speedups]==3.6.0
 prophetess>=0.1.0,<1.0
-cryptography==2.8
+cryptography==3.3.2
