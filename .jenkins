@@ -5,10 +5,11 @@ library identifier: 'vapor@1.15.7', retriever: modernSCM(
     credentialsId: 'vio-bot-gh'])
 
 pythonPipeline([
+    "publishToPypi": true,
     "pythonVersion": "3.8",
-    "skipSetup": true,
-    "twineCredential": "pypi-token-prophetess-salesforce-upload",
     "skipDocker": true,
     "skipIntegrationTest": true,
+    "skipSetup": true,
+    "twineCredential": "pypi-token-prophetess-salesforce-upload",
 ])
 
