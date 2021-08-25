@@ -47,7 +47,7 @@ async def test_SFClient_authenticate():
 async def test_SFClient_get_access_token(mjwt):
     with patch.object(SFClient, 'request', new_callable=asynctest.CoroutineMock) as mreq:
         mreq.return_value = {'access_token': 'i am safe'}
-        mjwt.encode.return_value.decode.return_value = 'assertions'
+        mjwt.encode.return_value = 'assertions'
 
         sfc = SFClient(client_id='test', user='tester', key='key', instance='na1')
 

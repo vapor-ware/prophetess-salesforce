@@ -73,7 +73,7 @@ class SFClient:
                 'alg': 'RS256',
                 'typ': 'JWT',
             }
-        ).decode('utf-8')
+        )
 
         data = {
             'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
